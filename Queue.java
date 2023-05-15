@@ -4,12 +4,15 @@ public class Queue<T extends Comparable<T>> {
   private LinkedNode<T> head, tail;
 
   public Queue() {
-    this.head = null;
-    this.tail = null;
+    this.head = this.tail = null;
   }
 
   public Queue(T v) {
     this.head = this.tail = new LinkedNode<T>(v);
+
+		if (this.head != null) {
+			this.size++;
+		}
   }
 
   public void enqueue(T v) {
